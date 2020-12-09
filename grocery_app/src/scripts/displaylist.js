@@ -39,18 +39,7 @@ function editItem() {
 
     const parent = this.parentNode.parentNode;
     const input = parent.childNodes[1];
-    // input.readOnly = false;
-
-    const item = document.createElement('div');
-    item.setAttribute('id', 'edit-item');
-    
-    const data = document.createElement('input');
-    data.setAttribute('value', input.value);
-    data.readOnly = false;
-
-    const updateBtn = document.createElement('button');
-    updateBtn.classList.add('')
-
+    input.readOnly = false;
 }
 // function is used as an helper to add item in todo list.
 function addGrocery(text) {
