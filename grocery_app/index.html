@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---Roboto font embeded-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Login/Register grocery-app </title>
+    <link rel="stylesheet" type="text/css" href="src/styles/style.css">
+</head>
+<body>
+    <div class= "login-page-grocery-app">
+        <div class="form">
+            <button type = "registerbtn" id="registerbtn" onclick="loginFormHide()">Register</button>
+            <button type = "loginbtn" id="loginbtn" onclick="registerFormHide()">Login</button>
+            
+            <!-- Register Form -->
+            <form class="registration-Form" id=registerFrom>
+                <div class="rows">
+                    <input type="text" id="fname" placeholder="FirstName" required="">
+                    <input type="text" id="lname" placeholder="LastName" required="">
+                    <input type="email" id="email"  placeholder="Email" required="">
+                    <input type="password"  id ="Password" placeholder="Password" required="">
+                    <input type="Password" id = "ConfirmPassword" placeholder="ConfirmPassword" required="">
+                    <br>
+                    <button type="button" onclick="Register()">Register</button>
+                </div>
+            </form>
+
+            <!-- Login Form -->
+            <form class="Login-Form" id="loginform">
+                <input type="email" id="userEmail"  placeholder="Email" required="">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <button type="button" class="login-button" onclick="login()">Login</button>
+            </form>
+
+            <!-- Logout Btn -->
+            <div class = "Logout-btn" id="logoutbtnClass">
+                <button type= "logout-Button" id="logoutbtn" class="logout-button" onclick="logout()">Logout</button>
+            </div>
+
+            <!-- Back Btn -->
+            <div class = "Back-btn" id="backbtnClass">
+                <button type="backbtn" id="backbtn" onclick="back()">Back</button>
+            </div>
+            
+            <!-- Add Btn Class-->
+            <div class = "Add-btn" id="addClass">
+                <input type="text" name="Item" id="addData"><br>
+                <button type="addbtn" id="addbtn" onclick="addItem()">Add</button>
+            </div>
+            <!-- Save Btn -->
+            <div class = "Save-btn" id="savebtnClass">
+                <button type= "Save-Button" id="Savebtn" class="Save-button" onclick="saveData()">Save</button>
+            </div>
+
+            <!-- Current Size of bucket -->
+            <!-- <div class = "bucket-size-btn" id="bucketbtnClass">
+                <input type="text" name="bucketItem" id="bucketData">
+                <button type= "bucket-size-Button" id="bucketbtn" class="bucket-button">Remaing Items(Max size)</button>
+            </div> -->
+        </div>
+    </div>
+    <div class="Item-Container">
+        <ul class="Additem" id="Additem"></ul>
+    </div>
+    <script type="text/javascript" src="src/scripts/main.js" async></script>
+    <script type="text/javascript" src="src/scripts/register.js" async></script>
+    <script type="text/javascript" src="src/scripts/login.js" async></script>
+    <script type="text/javascript" src="src/scripts/displaylist.js" async></script>
+    <script type="text/javascript" src="src/scripts/logout.js" async></script>
+    <script type="text/javascript" src="src/scripts/save.js" async></script>
+</body>
+</html>
