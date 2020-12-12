@@ -36,7 +36,7 @@ function login() {
         window.alert("Error: Incorrect Password!");
         return;
     }
-    document.getElementById("registerForm").reset();
+    document.getElementById("login-form").value = "";
     document.getElementById("login-form").style.display = "none";
     getUserList(userInfo);   
 }
