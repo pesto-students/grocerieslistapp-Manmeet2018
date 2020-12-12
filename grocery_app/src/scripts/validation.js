@@ -56,7 +56,7 @@ function confirmPasswordValidation(confirmPassword, password) {
     }
     if ((confirmPassword == password) && confirmPassword)
         return true;
-    throw "Error: Password don't match '";
+    throw "Error: Password don't match";
     return false;
 }
 

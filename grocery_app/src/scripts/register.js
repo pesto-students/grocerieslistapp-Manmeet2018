@@ -31,22 +31,27 @@ function Register() {
                     }
                     catch(err) {
                         window.alert(err);
+                        return;
                     }
                 }
                 catch(err) {
                     window.alert(err);
+                    return;
                 }
             }
             catch(err) {
                 window.alert(err);
+                return;
             }
         }
         catch(err) {
-            window.alert(err);    
+            window.alert(err);
+            return;    
         }
     }
     catch(err) {
         window.alert(err);
+        return;
     }
     
     if(result === true) {
