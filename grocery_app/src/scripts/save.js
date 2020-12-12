@@ -5,6 +5,7 @@ function saveData() {
     }
     let userInfo = JSON.parse(localStorage.getItem(userEmail));
     userInfo["tasks"] = parseObj;
+    console.log(parseObj);
     localStorage.setItem(userEmail, JSON.stringify(userInfo));
 }
 

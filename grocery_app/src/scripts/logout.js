@@ -1,5 +1,5 @@
 function deleteAllList() {
-    let list = document.getElementById("Additem");
+    let list = document.getElementById("ul_list");
     const childSize = list.childNodes.length;
 
     for(let idx=0; idx < childSize; ++idx) {
@@ -13,6 +13,6 @@ function logout() {
     // update grocery List
     saveData();
     deleteAllList();
-    registerFormHide();
+    location.reload();
   }
   

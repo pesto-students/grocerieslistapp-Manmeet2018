@@ -1,41 +1,44 @@
 
+let userPassword, userEmail, userInfo, result="", groceryList = {}, previousValue="";
+
+const isLoginIn = ()  => {
+    if(!userInfo) {
+        document.getElementById("new-Item-Container").style.display = "none";
+    }
+    else {
+        document.getElementById("login-form").style.display = "none";
+        document.getElementById("new-Item-Container").style.display = "block";
+    }
+}
+
 function getUserList(currentUser) {
-    groceryList = {};
-    if(currentUser.tasks === undefined) {
+    document.getElementById("new-Item-Container").style.display = "block";
+    if (currentUser.tasks === undefined) {
         return;
     }
     const tasks = currentUser["tasks"];
-    // UserGrocerySize = Object.keys(tasks).length;
-    // document.getElementById("bucketData").value = 5 - currentUser.displaySize();
     Object.keys(tasks).forEach(key => {
         displayItem(tasks[key]);
     });
 }
-
 function login() {
-    
-    userEmail = document.getElementById("userEmail").value;
-    let userPassword = document.getElementById("loginPassword").value;
-    let userInfo = JSON.parse(localStorage.getItem(userEmail));
+    userEmail = document.getElementById("email").value;
+    userPassword = document.getElementById("password").value;
+    userInfo = JSON.parse(localStorage.getItem(userEmail));
 
-    document.getElementById("loginform").reset();
-
-    if(!userInfo) {
-        window.alert("Error: No data found!");
+    if (!userInfo) {
+        window.alert("Error: No data found! Please re-enter");
+        window.location.replace('../../index.html');
         return;
     }
     const hashPassword = hashCode(userPassword)
-    if(userInfo['password'] != hashPassword) {
+    if (userInfo['password'] != hashPassword) {
         window.alert("Error: Incorrect Password!");
         return;
     }
-    document.getElementById("loginform").style.display="none";
-    document.getElementById("loginbtn").style.display="none";
-    document.getElementById("logoutbtnClass").style.display="block";
-    document.getElementById("backbtnClass").style.display="none";
-    document.getElementById("addClass").style.display="block";
-    document.getElementById("savebtnClass").style.display="block";
-    // document.getElementById("bucketbtnClass").style.display="block";    
-    getUserList(userInfo);
+    document.getElementById("login-form").style.display = "none";
+    getUserList(userInfo);   
 }
+
+
 
