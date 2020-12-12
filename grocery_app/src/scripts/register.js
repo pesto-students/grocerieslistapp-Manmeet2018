@@ -72,6 +72,7 @@ function Register() {
         }
         localStorage.setItem(usrEmail, JSON.stringify(user));
         window.alert("Successfully Registered!!");
+        document.getElementById("registerForm").reset();
         window.location.replace('../../index.html');
     }
 }
